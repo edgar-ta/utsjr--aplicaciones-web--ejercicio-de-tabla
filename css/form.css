@@ -1,0 +1,97 @@
+.main__header {
+    margin-bottom: 7rem;
+}
+
+.main__header > hr {
+    margin-top: 1rem;
+}
+
+.labeled-field {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    position: relative;
+}
+
+.labeled-field--name {
+    grid-column: 1 / 3;
+}
+
+.labeled-field__field, .form-input {
+    font-size: 1rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    outline: 1px solid #a0a0a0;
+    border: none;
+    transition: 
+        150ms linear outline-color,
+        600ms ease-out background-color,
+        50ms linear color
+        ;
+    padding: 2rem 0.25rem;
+    font-size: 1.5rem;
+    color: black;
+    background-color: white;
+    text-align: center;
+}
+
+.labeled-field__field--rounded {
+    border-radius: 999px;
+}
+
+.labeled-field__field:focus {
+    outline-color: black;
+}
+
+.labeled-field__field:hover {
+    outline-color: black;
+}
+
+.labeled-field__label {
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    word-spacing: 100%;
+}
+
+.showcase-field {
+    height: 12rem;
+    width: 100%;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #a0a0a0;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 4rem 2rem;
+}
+
+.labeled-field__indicator {
+    opacity: 0;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    transition: 
+        500ms ease-in-out opacity,
+        500ms ease-in-out color
+        ;
+    top: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.labeled-field.erroneous > .labeled-field__indicator {
+    color: red;
+    opacity: 1;
+}
+
+.labeled-field.erroneous > .labeled-field__field {
+    background-color: rgb(255, 235, 235);
+}
+
+.labeled-field.correct > .labeled-field__field {
+    background-color: rgb(235, 255, 235);
+}
+

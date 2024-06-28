@@ -1,0 +1,156 @@
+:root {
+    font-family: "Wix Madefor Display", sans-serif;
+    --dark-blue: #082f49;
+    --light-blue: #f0fdfa;
+    --horizontal-padding: 6rem;
+}
+
+body, h1, h2, h3, h4, h5, h6 ul, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--dark-blue);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.navbar {
+    display: flex;
+    height: fit-content;
+    background-color: var(--dark-blue);
+    box-sizing: border-box;
+    padding: 3rem var(--horizontal-padding);
+    position: relative;
+}
+
+.navbar > a > img {
+    height: 100%;
+    max-height: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Syne", sans-serif;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+.navbar > h1 {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    max-width: 50%;
+    margin: 0;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    box-sizing: border-box;
+    padding: 1.5rem var(--horizontal-padding);
+    background-color: var(--dark-blue);
+    color: white;
+    align-items: center;
+}
+
+.footer > ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer > ul > li {
+    margin-bottom: 1.5rem;
+}
+
+.footer > ul > li:last-child {
+    margin-bottom: 0;
+}
+
+.footer > a > img {
+    width: 100%;
+    height: auto;
+    max-width: 8rem;
+    margin: 0 auto;
+}
+
+main {
+    min-height: 100vh;
+    background-color: var(--light-blue);
+    box-sizing: border-box;
+    padding: 6rem var(--horizontal-padding);
+}
+
+.social-media-info {
+    display: flex;
+    text-decoration: none;
+    position: relative;
+    width: fit-content;
+}
+
+.social-media-info::after {
+    content: '\21F2';
+    transform: rotateX(180deg);
+    margin-left: 1rem;
+    position: relative;
+    bottom: 0;
+    transition: 100ms ease-in-out bottom;
+}
+
+.social-media-info:hover::after {
+    bottom: 5px;
+}
+
+
+.social-media-info::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background-color: white;
+    transform: translateX(-50%) translateY(-50%);
+    transition: 100ms ease-in-out width;
+}
+
+.social-media-info:hover::before {
+    width: 80%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.social-media-info__username {
+    margin-left: 1rem;
+}
+
+.social-media-info__icon {
+    vertical-align: middle;
+}
+
+.social-media-info:visited {
+    color: white;
+}
+
+.labeled-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.labeled-content__label {
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    opacity: 0.6;
+    font-family: "Syne", sans-serif
+}

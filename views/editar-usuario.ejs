@@ -1,0 +1,97 @@
+<%- include("./templates/header"); %>
+<link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/submit-input.css">
+
+    <main class="main">
+        <header class="main__header">
+            <h2>
+                Edición del usuario
+            </h2>
+            <hr>
+        </header>
+        <form action="/user/edit" method="post" class="form">
+            <input type="hidden" name="id" value="<%= usuario.id %>">
+
+            <div class="labeled-field labeled-field--name">
+                <label for="nameInput" class="labeled-field__label">Nombre</label>
+                <input 
+                    type="text" 
+                    name="name" 
+                    id="nameInput" 
+                    class="labeled-field__field" 
+                    placeholder="Nombre del alumno" 
+                    required 
+                    pattern="([A-ZÁÉÍÓÚÜ'][a-záéíóúü']+)( [A-ZÁÉÍÓÚÜ'][a-záéíóúü']+)*"
+                    autocomplete="off"
+                    value="<%= usuario.nombre %>"
+                    >
+                <span class="labeled-field__indicator">Correcto</span>
+            </div>
+            <div class="labeled-field">
+                <label class="labeled-field__label " for="periodInput">Cuatrimestre</label>
+                <input 
+                    type="number" 
+                    name="period" 
+                    id="periodInput" 
+                    max="11" 
+                    min="1" 
+                    placeholder="3" 
+                    required 
+                    class="labeled-field__field labeled-field__field--rounded"
+                    autocomplete="off"
+                    value="<%= usuario.cuatrimestre %>"
+                >
+                <span class="labeled-field__indicator"></span>
+            </div>
+            <div class="labeled-field">
+                <label for="careerInput" class="labeled-field__label">Carrera</label>
+                <select name="career" id="careerInput" required class="labeled-field__field labeled-field__field--rounded">
+                    <option value="">Seleccionar carrera</option>
+                    <option value="TI" <% if (usuario.carrera == "TI") { %> selected <% } %>>
+                        Tecnologías de la Información
+                    </option>
+                    <option value="PIP" <% if (usuario.carrera == "PIP") { %> selected <% } %>>
+                        Producción Industrial de Plásticos
+                    </option>
+                    <option value="QI" <% if (usuario.carrera == "QI") { %> selected <% } %>>
+                        Química Industrial
+                    </option>
+                </select>
+                <span class="labeled-field__indicator"></span>
+            </div>
+            <div class="labeled-field">
+                <label class="labeled-field__label" for="groupInput">Grupo</label>
+                <select name="group" id="groupInput" required class="labeled-field__field labeled-field__field--rounded">
+                    <option value="">Seleccionar Grupo</option>
+                    <option value="1" <% if (usuario.grupo == 1) { %> selected <% } %> >01</option>
+                    <option value="2" <% if (usuario.grupo == 2) { %> selected <% } %> >02</option>
+                    <option value="3" <% if (usuario.grupo == 3) { %> selected <% } %> >03</option>
+                    <option value="4" <% if (usuario.grupo == 4) { %> selected <% } %> >04</option>
+                </select>
+                <span class="labeled-field__indicator"></span>
+            </div>
+            <div class="labeled-field">
+                <label class="labeled-field__label " for="yearInput">Año</label>
+                <input 
+                    type="number" 
+                    name="year" 
+                    id="yearInput" 
+                    max="2024" 
+                    min="2000" 
+                    placeholder="Año de ingreso" 
+                    required 
+                    class="labeled-field__field labeled-field__field--rounded"
+                    autocomplete="off"
+                    value="<%= usuario.anio %>"
+                    >
+                <span class="labeled-field__indicator"></span>
+            </div>
+            <div class="submit-input-container">
+                <button type="submit" class="form-input form-input--submit">
+                    Enviar
+                </button>
+            </div>
+        </form>
+    </main>
+    <script src="/js/form.js"></script>
+<%- include("./templates/footer"); %>

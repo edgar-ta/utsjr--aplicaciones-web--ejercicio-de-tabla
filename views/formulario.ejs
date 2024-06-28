@@ -1,0 +1,92 @@
+<%- include("./templates/header"); %>
+<link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/submit-input.css">
+
+    <main class="main">
+        <header class="main__header">
+            <h2>
+                Registro del alumno
+            </h2>
+            <hr>
+        </header>
+        <form action="/user/add" method="post" class="form">
+            <div class="labeled-field labeled-field--name">
+                <label for="nameInput" class="labeled-field__label">Nombre</label>
+                <input 
+                    type="text" 
+                    name="name" 
+                    id="nameInput" 
+                    class="labeled-field__field" 
+                    placeholder="Nombre del alumno" 
+                    required 
+                    pattern="([A-ZÁÉÍÓÚÜ'][a-záéíóúü']+)( [A-ZÁÉÍÓÚÜ'][a-záéíóúü']+)*"
+                    autocomplete="off"
+                    >
+                <span class="labeled-field__indicator">Correcto</span>
+            </div>
+            <div class="labeled-field">
+                <label class="labeled-field__label " for="periodInput">Cuatrimestre</label>
+                <input 
+                    type="number" 
+                    name="period" 
+                    id="periodInput" 
+                    max="11" 
+                    min="1" 
+                    placeholder="3" 
+                    required 
+                    class="labeled-field__field labeled-field__field--rounded"
+                    autocomplete="off"
+                >
+                <span class="labeled-field__indicator"></span>
+            </div>
+            <div class="labeled-field">
+                <label for="careerInput" class="labeled-field__label">Carrera</label>
+                <select name="career" id="careerInput" required class="labeled-field__field labeled-field__field--rounded">
+                    <option value="">Seleccionar carrera</option>
+                    <option value="TI">
+                        Tecnologías de la Información
+                    </option>
+                    <option value="PIP">
+                        Producción Industrial de Plásticos
+                    </option>
+                    <option value="QI">
+                        Química Industrial
+                    </option>
+                </select>
+                <span class="labeled-field__indicator"></span>
+            </div>
+            <div class="labeled-field">
+                <label class="labeled-field__label" for="groupInput">Grupo</label>
+                <select name="group" id="groupInput" required class="labeled-field__field labeled-field__field--rounded">
+                    <option value="">Seleccionar Grupo</option>
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                </select>
+                <span class="labeled-field__indicator"></span>
+            </div>
+            <div class="labeled-field">
+                <label class="labeled-field__label " for="yearInput">Año</label>
+                <input 
+                    type="number" 
+                    name="year" 
+                    id="yearInput" 
+                    max="2024" 
+                    min="2000" 
+                    placeholder="Año de ingreso" 
+                    required 
+                    class="labeled-field__field labeled-field__field--rounded"
+                    autocomplete="off"
+                    >
+                <span class="labeled-field__indicator"></span>
+            </div>
+            <div class="submit-input-container">
+                <button type="submit" class="form-input form-input--submit">
+                    Enviar
+                </button>
+            </div>
+        </form>
+    </main>
+    <script src="/js/form.js"></script>
+<%- include("./templates/footer"); %>

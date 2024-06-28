@@ -1,0 +1,32 @@
+.large-font-size {
+    font-size: 4rem;
+    line-height: 1.5;
+    margin-bottom: 6rem;
+}
+
+.named-content {
+    display: inline-block;
+    position: relative;
+}
+
+.named-content__name {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+}
+
+.named-content__content {
+    font-size: 6rem;
+    font-weight: 600;
+}
+
+.whole-group-container {
+    display: inline-block;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

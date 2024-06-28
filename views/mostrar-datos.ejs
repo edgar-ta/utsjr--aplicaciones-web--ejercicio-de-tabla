@@ -1,0 +1,77 @@
+<%- include("./templates/header"); %>
+
+<link rel="stylesheet" href="/css/student-data.css">
+<link rel="stylesheet" href="/css/submit-input.css">
+<main class="main">
+
+<% 
+    let name;
+    let career;
+    let group;
+    let year;
+    let period;
+
+    name ??= "Edgar Trejo Avila";
+    career ??= "TI";
+    group ??= 2;
+    year ??= 2024;
+    period ??= 3;
+
+    const formatTwoDigits = (number) => {
+        number = number % 100;
+        if (number < 10) return "0" + number;
+        return "" + number;
+    };
+    
+    %>
+
+    <p class="large-font-size">
+        Los datos capturados son:
+    </p>
+    <div class="large-font-size">
+        Al alumno 
+        <div class="named-content">
+            <span class="named-content__name">NOMBRE</span>
+            <span class="named-content__content">
+                <%- user.name %>
+            </span> 
+        </div>
+        del grupo 
+        <div class="whole-group-container">
+            <div class="named-content">
+                <span class="named-content__name">CARRERA</span>
+                <span class="named-content__content">
+                    <%- user.career.toUpperCase() %>
+                </span>
+            </div>
+            <div class="named-content">
+                <span class="named-content__name">GRUPO</span>
+                <span class="named-content__content">
+                    <%- formatTwoDigits(user.group) %>
+                </span>
+            </div>
+            <div class="named-content">
+                <span class="named-content__name">INGRESO</span>
+                <span class="named-content__content">
+                    SM-
+                </span>
+            </div>
+            <div class="named-content">
+                <span class="named-content__name">AÑO</span>
+                <span class="named-content__content">
+                    <%- formatTwoDigits(user.year) %>
+                </span>
+            </div>
+        </div>
+        del 
+        <div class="named-content">
+            <span class="named-content__name">CUATRIMESTRE</span>
+            <span class="named-content__content"><%- user.period %>°</span>
+        </div>
+        cuatrimestre le faltan
+        <%- 11 - user.period %>
+        cuatrimestres para terminar la carrera.
+    </div>
+</main>
+
+<%- include("./templates/footer"); %>

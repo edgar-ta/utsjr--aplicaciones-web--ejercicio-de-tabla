@@ -1,0 +1,44 @@
+.large-font-size {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+}
+
+
+.table {
+    display: flex;
+}
+
+.table > thead {
+    display: contents;
+}
+
+.table > tbody {
+    display: contents;
+}
+
+.table > thead > tr {
+    display: flex;
+    flex-direction: column;
+    background-color: #e0e0e0;
+    box-sizing: border-box;
+    padding: 1rem 3rem;
+}
+
+.table > tbody > tr {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 1rem 3rem;
+}
+
+.table > tbody > tr > td {
+    border-bottom: 1px solid black;
+}
+
+.table > thead > tr > th {
+    text-align: left;
+    border-bottom: 1px solid white;
+}

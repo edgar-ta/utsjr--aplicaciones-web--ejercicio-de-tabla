@@ -1,0 +1,76 @@
+<%- include("./templates/header"); %>
+
+<link rel="stylesheet" href="/css/mostrar-usuarios__tabla.css">
+<link rel="stylesheet" href="/css/mostrar-usuarios__grid-de-usuarios.css">
+<link rel="stylesheet" href="/css/mostrar-usuarios__tarjeta-de-usuarios.css">
+
+<main class="main">
+    <div style="display: none;">
+        <table class="mostrar-usuarios__tabla">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Cuatrimestre</th>
+                    <th>Carrera</th>
+                    <th>Grupo</th>
+                    <th>Año</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+                <% usuarios.forEach(usuario => { %>
+                    <tr>
+                        <td><%= usuario.id %></td>
+                        <td><%= usuario.nombre %></td>
+                        <td><%= usuario.cuatrimestre %></td>
+                        <td><%= usuario.carrera %></td>
+                        <td><%= usuario.grupo %></td>
+                        <td><%= usuario.anio %></td>
+                    </tr>
+                <% }) %>
+                    
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mostrar-usuarios__grid-de-usuarios">
+        <% usuarios.forEach(usuario => { %>
+            <div class="mostrar-usuarios__tarjeta-de-usuarios">
+                <p>USR-<%= usuario.id %></p>
+
+                <h1><%= usuario.nombre %></h1>
+
+                <div class="mostrar-usuarios__tarjeta-de-usuarios__datos">
+                    <div class="mostrar-usuarios__tarjeta-de-usuarios__dato">
+                        <label for="cuatrimestre-<%=usuario.id%>">CUATRIMESTRE</label>
+                        <p id="cuatrimestre-<%=usuario.id%>"><%= usuario.cuatrimestre %></p>
+                    </div>
+                    <div class="mostrar-usuarios__tarjeta-de-usuarios__dato">
+                        <label for="carrera-<%=usuario.id%>">CARRERA</label>
+                        <p id="carrera-<%=usuario.id%>"><%= usuario.carrera %></p>
+                    </div>
+                    <div class="mostrar-usuarios__tarjeta-de-usuarios__dato">
+                        <label for="grupo-<%=usuario.id%>">GRUPO</label>
+                        <p id="grupo-<%=usuario.id%>"><%= usuario.grupo %></p>
+                    </div>
+                    <div class="mostrar-usuarios__tarjeta-de-usuarios__dato">
+                        <label for="anio-<%=usuario.id%>">ANIO</label>
+                        <p id="anio-<%=usuario.id%>"><%= usuario.anio %></p>
+                    </div>
+                </div>
+
+                <div class="mostrar-usuarios__tarjeta-de-usuarios__panel">
+                    <a href="/user/edit/<%= usuario.id %>" class="mostrar-usuarios__tarjeta-de-usuarios__boton mostrar-usuarios__tarjeta-de-usuarios__boton--editar">Editar</a>
+                    <a href="/user/delete/<%= usuario.id %>" class="mostrar-usuarios__tarjeta-de-usuarios__boton mostrar-usuarios__tarjeta-de-usuarios__boton--eliminar">Eliminar</a>
+                </div>
+            </div>
+            <tr>
+            </tr>
+        <% }) %>
+    </div>
+</main>
+
+
+<%- include("./templates/footer"); %>
+

@@ -1,0 +1,73 @@
+.form-input {
+    font-size: 1rem;
+    font-family: "Wix Madefor Display", sans-serif;
+    outline: 1px solid #a0a0a0;
+    border: none;
+    transition: 
+        150ms linear outline-color,
+        600ms ease-out background-color,
+        50ms linear color
+        ;
+    padding: 2rem 0.25rem;
+    font-size: 1.5rem;
+    color: black;
+    background-color: white;
+    text-align: center;
+}
+
+.form-input--submit {
+    background-color: var(--dark-blue);
+    color: white;
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border-radius: 999px;
+    isolation: isolate;
+    border: none;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    color: white;
+    transition: 
+        250ms ease-in-out left,
+        250ms ease-in-out top,
+        250ms ease-in-out background-color,
+        250ms ease-in-out color
+    ;
+}
+
+.submit-input-container {
+    position: relative;
+    width: 50%;
+}
+
+.form-input--submit:hover {
+    left: 15px;
+    top: -15px;
+    background-color: #f59e0b;
+    border: 1px solid white;
+    color: black;
+}
+
+.form-input--submit:active {
+    transition-duration: 100ms;
+    left: 0px;
+    top: 0px;
+}
+
+.submit-input-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 999px;
+    background-color: var(--dark-blue);
+    transition: 
+        250ms ease-in-out left,
+        250ms ease-in-out top,
+        250ms ease-in-out background-color
+        ;
+    left: 0;
+    top: 0;
+}
