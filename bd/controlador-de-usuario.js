@@ -15,7 +15,7 @@ class ControladorDeUsuario {
      * @param {Usuario} usuario 
      */
     async insertar(usuario) {
-        const sql = `INSERT INTO usuario VALUES (NULL, '${escape(usuario.nombre)}', ${escape(usuario.cuatrimestre)}, '${escape(usuario.carrera)}', ${escape(usuario.grupo)}, ${escape(usuario.anio)});`;
+        const sql = `INSERT INTO usuario VALUES (NULL, ${escape(usuario.nombre)}, ${escape(usuario.cuatrimestre)}, ${escape(usuario.carrera)}, ${escape(usuario.grupo)}, ${escape(usuario.anio)});`;
         try {
             await this.bd.conectar();
             await this.bd.conexion.execute(sql);

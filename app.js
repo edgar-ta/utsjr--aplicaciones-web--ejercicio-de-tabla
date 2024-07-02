@@ -1,5 +1,6 @@
 import express from "express";
 import userRoutes from "./routes/rutas-de-usuario.js";
+import productRoutes from "./routes/rutas-de-producto.js";
 import path from "path";
 
 import { fileURLToPath } from "url";
@@ -19,6 +20,7 @@ app.use("/js", express.static(path.join(__dirname, "js")));
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 
 app.use("/user", userRoutes);
+app.use("/product", productRoutes);
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}`);

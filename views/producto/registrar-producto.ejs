@@ -1,0 +1,97 @@
+<%- include("../templates/header"); %>
+<link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/submit-input.css">
+
+    <main class="main">
+        <header class="main__header">
+            <h2>
+                Registro del producto
+            </h2>
+            <hr>
+        </header>
+        <form action="/product/add" method="post" class="form">
+
+            <div class="labeled-field labeled-field--name">
+                <label for="codeInput" class="labeled-field__label">Código</label>
+                <input 
+                    type="text" 
+                    name="codigo" 
+                    id="codeInput" 
+                    class="labeled-field__field" 
+                    placeholder="12345678" 
+                    required 
+                    maxlength="8"
+                    autocomplete="off"
+                    >
+                <span class="labeled-field__indicator">Correcto</span>
+            </div>
+            <div class="labeled-field labeled-field--name">
+                <label for="nameInput" class="labeled-field__label">Nombre</label>
+                <input 
+                    type="text" 
+                    name="nombre" 
+                    id="nameInput" 
+                    class="labeled-field__field" 
+                    placeholder="Nombre del producto" 
+                    required 
+                    autocomplete="off"
+                    >
+                <span class="labeled-field__indicator">Correcto</span>
+            </div>
+            <div class="labeled-field">
+                <label class="labeled-field__label " for="discountInput">Descuento</label>
+                <input 
+                    type="number" 
+                    name="descuento" 
+                    id="discountInput" 
+                    max="100" 
+                    min="0" 
+                    placeholder="15" 
+                    required 
+                    class="labeled-field__field labeled-field__field--rounded"
+                    autocomplete="off"
+                >
+                <span class="labeled-field__indicator"></span>
+            </div>
+            <div class="labeled-field">
+                <label class="labeled-field__label " for="priceInput">Precio</label>
+                <input 
+                    type="number" 
+                    name="precio" 
+                    id="priceInput" 
+                    min="0" 
+                    placeholder="$$$" 
+                    required 
+                    class="labeled-field__field labeled-field__field--rounded"
+                    autocomplete="off"
+                >
+                <span class="labeled-field__indicator"></span>
+            </div>
+            <div class="labeled-field">
+                <label class="labeled-field__label " for="stockInput">Stock</label>
+                <input 
+                    type="number" 
+                    name="stock" 
+                    id="stockInput" 
+                    min="0" 
+                    placeholder="15"
+                    required 
+                    class="labeled-field__field labeled-field__field--rounded"
+                    autocomplete="off"
+                >
+                <span class="labeled-field__indicator"></span>
+            </div>
+
+            <div class="submit-input-container" style="grid-row: 4;">
+                <button type="submit" class="form-input form-input--submit">
+                    Enviar
+                </button>
+            </div>
+        </form>
+    </main>
+    <script src="/js/form.js"></script>
+    <script>
+        setupInputs([ "code", "name", "discount", "price", "stock" ]);
+    </script>
+
+<%- include("../templates/footer"); %>

@@ -41,12 +41,24 @@ function setupInput(inputContainer) {
     checkCorrectOrBlankValue();
 }
 
-const inputNames = [ "name", "period", "career", "group", "year" ];
-inputNames.forEach(name => {
-    const inputId = `${name}Input`;
+// const inputNames = [ "name", "period", "career", "group", "year" ];
+// inputNames.forEach(name => {
+//     const inputId = `${name}Input`;
 
-    /** @type {HTMLInputElement} */
-    const input = document.getElementById(inputId);
+//     /** @type {HTMLInputElement} */
+//     const input = document.getElementById(inputId);
 
-    setupInput(input.parentNode);
-});
+//     setupInput(input.parentNode);
+// });
+
+/**
+ * 
+ * @param {string[]} inputList 
+ */
+function setupInputs(inputList) {
+    inputList.forEach(name => {
+        const id = `${name}Input`;
+        const input = document.getElementById(id);
+        setupInput(input.parentNode);
+    });
+}

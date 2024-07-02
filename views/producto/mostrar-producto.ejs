@@ -1,0 +1,47 @@
+<%- include("../templates/header"); %>
+
+<link rel="stylesheet" href="/css/mostrar-usuarios__tabla.css">
+<link rel="stylesheet" href="/css/mostrar-usuarios__grid-de-usuarios.css">
+<link rel="stylesheet" href="/css/mostrar-usuarios__tarjeta-de-usuarios.css">
+
+<main class="main">
+    <div class="mostrar-usuarios__grid-de-usuarios">
+        <% productos.forEach(producto => { %>
+            <div class="mostrar-usuarios__tarjeta-de-usuarios">
+                <p>PRD-<%= producto.id %></p>
+
+                <h1><%= producto.nombre %></h1>
+
+                <div class="mostrar-usuarios__tarjeta-de-usuarios__datos">
+                    <div class="mostrar-usuarios__tarjeta-de-usuarios__dato">
+                        <label for="codigo-<%=producto.id%>">CODIGO</label>
+                        <p id="codigo-<%=producto.id%>"><%= producto.codigo %></p>
+                    </div>
+                    <div class="mostrar-usuarios__tarjeta-de-usuarios__dato">
+                        <label for="descuento-<%=producto.id%>">DESCUENTO</label>
+                        <p id="descuento-<%=producto.id%>"><%= producto.descuento %></p>
+                    </div>
+                    <div class="mostrar-usuarios__tarjeta-de-usuarios__dato">
+                        <label for="precio-<%=producto.id%>">PRECIO</label>
+                        <p id="precio-<%=producto.id%>"><%= producto.precio %></p>
+                    </div>
+                    <div class="mostrar-usuarios__tarjeta-de-usuarios__dato">
+                        <label for="stock-<%=producto.id%>">STOCK</label>
+                        <p id="stock-<%=producto.id%>"><%= producto.stock %></p>
+                    </div>
+                </div>
+
+                <div class="mostrar-usuarios__tarjeta-de-usuarios__panel">
+                    <a href="/product/edit/<%= producto.id %>" class="mostrar-usuarios__tarjeta-de-usuarios__boton mostrar-usuarios__tarjeta-de-usuarios__boton--editar">Editar</a>
+                    <a href="/product/delete/<%= producto.id %>" class="mostrar-usuarios__tarjeta-de-usuarios__boton mostrar-usuarios__tarjeta-de-usuarios__boton--eliminar">Eliminar</a>
+                </div>
+            </div>
+            <tr>
+            </tr>
+        <% }) %>
+    </div>
+</main>
+
+
+<%- include("../templates/footer"); %>
+
